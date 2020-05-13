@@ -67,6 +67,13 @@
     <string name="a28">Passenger</string>
     <string name="a29">Motorist</string>
     <string name="a30">Bus</string>
+    <string name="a31">register</string>
+    <string name="a32">please enter the user name</string>
+    <string name="a33">please enter the password</string>
+    <string name="a34">please enter the password again</string>
+    <string name="a35">user</string>
+    <string name="a36">official</string>
+    <string name="a37">admimistrator</string>
 
 
 
