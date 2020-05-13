@@ -69,7 +69,13 @@
     <string name="a30">Bus</string>
 
 
-
+    <string name="a31">inscription</string>
+    <string name="a32">entrez le nom</string>
+    <string name="a33">entrez le mot de passe</string>
+    <string name="a34">entrez encore le mot de passe</string>
+    <string name="a35">utilisateur</string>
+    <string name="a36">officiel</string>
+    <string name="a37">administrateur</string>
 
 
 
