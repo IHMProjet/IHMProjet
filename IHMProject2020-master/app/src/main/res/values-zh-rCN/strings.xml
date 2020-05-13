@@ -60,6 +60,14 @@
     <string name="zhong">中文</string>
     <string name="fayu">法语</string>
 
+    <string name="a24">行人</string>
+    <string name="a25">骑自行车</string>
+    <string name="a26">骑摩托车</string>
+    <string name="a27">返回</string>
+    <string name="a28">乘客</string>
+    <string name="a29">驾驶员</string>
+    <string name="a30">公交车</string>
+
 
 
 
