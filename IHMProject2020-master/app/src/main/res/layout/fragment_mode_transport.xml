@@ -12,7 +12,7 @@
         android:layout_marginEnd="0dp"
         android:background="#FFFFFF"
         android:drawableStart="@drawable/ic_directions_walk_black_24dp"
-        android:text="Piéton"
+        android:text="@string/a24"
         android:textAlignment="viewStart"
         android:textSize="20sp" />
 
@@ -26,7 +26,7 @@
         android:layout_marginEnd="0dp"
         android:background="#FFFFFF"
         android:drawableStart="@drawable/ic_directions_bike_black_24dp"
-        android:text=" Cycliste"
+        android:text="@string/a25"
         android:textAlignment="viewStart"
         android:textSize="20sp" />
 
@@ -40,7 +40,7 @@
         android:layout_marginEnd="3dp"
         android:background="#FFFFFF"
         android:drawableStart="@drawable/ic_motorcycle_black_24dp"
-        android:text="  Motard"
+        android:text="@string/a26"
         android:textAlignment="viewStart"
         android:textSize="20sp" />
 
@@ -52,7 +52,7 @@
         android:layout_marginTop="7dp"
         android:layout_marginEnd="3dp"
         android:drawableStart="@drawable/ic_arrow_back_black_24dp"
-        android:text="Retour" />
+        android:text="@string/a27" />
 
     <Button
         android:id="@+id/mode_passager_button"
@@ -64,7 +64,7 @@
         android:layout_marginEnd="0dp"
         android:background="#FFFFFF"
         android:drawableStart="@drawable/ic_local_taxi_black_24dp"
-        android:text=" Passager"
+        android:text="@string/a28"
         android:textAlignment="viewStart"
         android:textSize="20sp" />
 
@@ -78,7 +78,7 @@
         android:layout_marginEnd="0dp"
         android:background="#FFFFFF"
         android:drawableStart="@drawable/ic_directions_car_black_24dp"
-        android:text="  Automobiliste"
+        android:text="@string/a29"
         android:textAlignment="viewStart"
         android:textSize="20sp" />
 
@@ -92,7 +92,7 @@
         android:layout_marginEnd="0dp"
         android:background="#FFFFFF"
         android:drawableStart="@drawable/ic_directions_bus_black_24dp"
-        android:text="  Bus"
+        android:text="@string/a30"
         android:textAlignment="viewStart"
         android:textSize="20sp" />
 </RelativeLayout>

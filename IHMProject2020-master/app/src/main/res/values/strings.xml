@@ -54,11 +54,23 @@
     <string name="a22">Accident</string>
     <string name="a23">Incident</string>
 
-    <string name="ying">英文</string>
+
+    <string name="quxiao">Annuler</string>
+
+
+    <string name="ying">English</string>
     <string name="zhong">中文</string>
-    <string name="fayu">法语</string>
+    <string name="fayu">Français</string>
 
 
+
+    <string name="a24">Piéton</string>
+    <string name="a25">Cycliste</string>
+    <string name="a26">Motard</string>
+    <string name="a27">Retour</string>
+    <string name="a28">Passager</string>
+    <string name="a29">Automobiliste</string>
+    <string name="a30">Bus</string>
 
 
 

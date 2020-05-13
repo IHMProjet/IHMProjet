@@ -8,7 +8,7 @@
     <string-array name="languagesB">
         <item>Français</item>
         <item>English</item>
-        <item>Chinois</item>
+        <item>中文</item>
     </string-array>
 
     <!-- TODO: Remove or change this placeholder text -->
@@ -54,11 +54,19 @@
     <string name="a22">Accident</string>
     <string name="a23">Incident</string>
 
-    <string name="ying">11</string>
+    <string name="quxiao">取消</string>
+
+    <string name="ying">English</string>
     <string name="zhong">中文</string>
-    <string name="fayu">法语</string>
+    <string name="fayu">Français</string>
 
-
+    <string name="a24">行人</string>
+    <string name="a25">骑自行车</string>
+    <string name="a26">骑摩托车</string>
+    <string name="a27">返回</string>
+    <string name="a28">乘客</string>
+    <string name="a29">驾驶员</string>
+    <string name="a30">公交车</string>
 
 
 

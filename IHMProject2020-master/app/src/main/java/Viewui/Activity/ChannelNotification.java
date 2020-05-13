@@ -40,6 +40,11 @@ public class ChannelNotification extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        x.Ext.init(this);
+        //是否输出debug日志
+        x.Ext.setDebug(BuildConfig.DEBUG);
+        //数据库配置
+        Xutils.initDbConfiginit();
         createNotificationChannel("channel", "Channel pour créer des notifications", NotificationManager.IMPORTANCE_DEFAULT);
     }
 
@@ -50,11 +55,7 @@ public class ChannelNotification extends Application {
             channel.setDescription(description);
             notificationManager = getSystemService(NotificationManager.class);
             Objects.requireNonNull(notificationManager).createNotificationChannel(channel);
-            x.Ext.init(this);
-            //是否输出debug日志
-            x.Ext.setDebug(BuildConfig.DEBUG);
-            //数据库配置
-            Xutils.initDbConfiginit();
+
 
         }
     }
