@@ -8,11 +8,11 @@
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
     <ImageView
+        android:id="@+id/iv_personal_icon"
         android:layout_width="match_parent"
-        android:layout_height="108dp"
+        android:layout_height="88dp"
         android:src="@mipmap/ic_launcher_round"
         />
-
     <TextView
         android:id="@+id/username"
         android:layout_width="match_parent"
@@ -20,9 +20,12 @@
         android:text="username"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:text="usermailadresse"/>
+
+    <Button
+        android:id="@+id/btn_change"
+        android:layout_width="100dp"
+        android:layout_height="38dp"
+        android:layout_gravity="center"
+        android:background="#00cc99"
+        android:text="@string/a38"></Button>
 </LinearLayout>

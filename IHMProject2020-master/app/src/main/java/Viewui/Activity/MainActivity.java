@@ -1,4 +1,20 @@
 package Viewui.Activity;
+import java.io.File;
+
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.net.Uri;
+import android.os.Bundle;
+import android.os.Environment;
+import android.provider.MediaStore;
+import android.util.Log;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.ImageView;
 
 import android.Manifest;
 import android.content.Intent;
@@ -48,6 +64,48 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
 
     private MapFragment mapFragment;
     private boolean permissionGranted;
+    protected static final int CHOOSE_PICTURE = 0;
+    protected static final int TAKE_PICTURE = 1;
+    private static final int CROP_SMALL_PICTURE = 2;
+    protected static Uri tempUri;
+    private ImageView iv_personal_icon;
+
+
+
+    /**
+     * 显示修改头像的对话框
+     */
+    protected void showChoosePicDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("设置头像");
+        String[] items = { "选择本地照片", "拍照" };
+        builder.setNegativeButton("取消", null);
+        builder.setItems(items, new DialogInterface.OnClickListener() {
+
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                switch (which) {
+                    case CHOOSE_PICTURE: // 选择本地照片
+                        Intent openAlbumIntent = new Intent(
+                                Intent.ACTION_GET_CONTENT);
+                        openAlbumIntent.setType("image/*");
+                        startActivityForResult(openAlbumIntent, CHOOSE_PICTURE);
+                        break;
+                    case TAKE_PICTURE: // 拍照
+                        Intent openCameraIntent = new Intent(
+                                MediaStore.ACTION_IMAGE_CAPTURE);
+                        tempUri = Uri.fromFile(new File(Environment
+                                .getExternalStorageDirectory(), "image.jpg"));
+                        // 指定照片保存路径（SD卡），image.jpg为一个临时文件，每次拍照后这个图片都会被替换
+                        openCameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, tempUri);
+                        startActivityForResult(openCameraIntent, TAKE_PICTURE);
+                        break;
+                }
+            }
+        });
+        builder.create().show();
+    }
+    
 
 
     @Override
