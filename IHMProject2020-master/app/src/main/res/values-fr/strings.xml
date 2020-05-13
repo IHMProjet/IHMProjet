@@ -18,8 +18,8 @@
     <string name="renzheng">Certification</string>
     <string name="tuisong">Publier</string>
     <string name="namestring">Nom</string>
-    <string name="age">Age</string>
-    <string name="sex">Sexe</string>
+    <string name="workplace">Lieu de travail</string>
+    <string name="worknumber">Numéro de travail</string>
     <string name="tuichu">Quitter</string>
 
     <string name="gaps1">Activer GPS</string>

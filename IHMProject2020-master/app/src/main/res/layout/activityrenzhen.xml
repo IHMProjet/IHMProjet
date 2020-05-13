@@ -72,7 +72,7 @@
                 android:textColor="@color/main2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/age"
+                android:text="@string/workplace"
                 android:textStyle="bold" />
             <EditText
                 android:textColor="@color/main2"
@@ -105,7 +105,7 @@
                 android:textColor="@color/main2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/sex"
+                android:text="@string/worknumber"
                 android:textStyle="bold" />
 
             <EditText

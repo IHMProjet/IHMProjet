@@ -19,8 +19,8 @@
     <string name="renzheng">认证</string>
     <string name="tuisong">推送</string>
     <string name="namestring">名字</string>
-    <string name="age">年龄</string>
-    <string name="sex">性别</string>
+    <string name="workplace">工作地</string>
+    <string name="worknumber">工号</string>
     <string name="tuichu">退出</string>
 
     <string name="gaps1">打开GPS</string>
