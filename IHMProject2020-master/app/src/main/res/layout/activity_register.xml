@@ -16,7 +16,7 @@
         android:layout_height="wrap_content">
         <TextView
             android:layout_margin="10dp"
-            android:text="注册"
+            android:text="@string/a31"
             android:textSize="16sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
@@ -47,7 +47,7 @@
                 android:layout_marginBottom="10dp"
                 android:background="@color/bai"
                 android:id="@+id/et_phone"
-                android:hint="请输入账号"
+                android:hint="@string/a32"
 
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
@@ -84,7 +84,7 @@
                 android:layout_marginBottom="10dp"
                 android:background="@color/bai"
                 android:id="@+id/et_pwd"
-                android:hint="请输入密码"
+                android:hint="@string/a33"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@+id/tv_phone"
@@ -119,7 +119,7 @@
                 android:layout_marginBottom="10dp"
                 android:background="@color/bai"
                 android:id="@+id/et_pwd2"
-                android:hint="请再次输入密码"
+                android:hint="@string/a34"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@+id/tv_phone"
@@ -139,7 +139,7 @@
             android:layout_height="wrap_content">
             <RadioButton
                 android:id="@+id/ptyonghu"
-                android:text="用户"
+                android:text="@string/a35"
                 android:textSize="10sp"
                 android:background="@drawable/radioyangshi"
                 android:layout_marginLeft="20dp"
@@ -150,7 +150,7 @@
                 android:layout_height="40dp"/>
             <RadioButton
                 android:id="@+id/guanfang"
-                android:text="官方"
+                android:text="@string/a36"
                 android:textSize="10sp"
                 android:background="@drawable/radioyangshi"
                 android:layout_marginLeft="20dp"
@@ -162,7 +162,7 @@
             <RadioButton
 
                 android:id="@+id/glyonghu"
-                android:text="管理"
+                android:text="@string/a37"
                 android:textSize="10sp"
                 android:background="@drawable/radioyangshi"
                 android:layout_marginLeft="50dp"
