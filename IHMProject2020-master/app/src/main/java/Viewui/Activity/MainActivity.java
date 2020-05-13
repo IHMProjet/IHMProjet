@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.WindowInsets;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -67,6 +68,15 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
         NavigationView mainNavigationView = (NavigationView) findViewById(R.id.main_nav_view);
+
+        try {
+            User user=Xutils.initDbConfiginit().selector(User.class).findFirst();
+            TextView textview= mainNavigationView.getHeaderView(0).findViewById(R.id.username);
+            textview.setText(user.getUsername());
+        }catch (DbException e){
+            e.printStackTrace();
+        }
+
         mainNavigationView.setNavigationItemSelectedListener(this);
         mainNavigationView.setOnApplyWindowInsetsListener(new View.OnApplyWindowInsetsListener() {
             @Override
