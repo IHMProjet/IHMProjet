@@ -256,6 +256,7 @@ public class MapFragment extends Fragment implements View.OnClickListener, Locat
                     mCallBack.mapIntentButtonClicked(v);
                 Snackbar.make(v, "Button d'accident cliqué", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+                 sendNotificationOnChannel("Attention!","Il y a un nouveau incident!","channel1", NotificationCompat.PRIORITY_DEFAULT);
                 sendNotificationOnChannel("Confirmation de publication","Nous vous informons que votre accident a bien été publié.","channel1", NotificationCompat.PRIORITY_DEFAULT);
                 break;
                 case R.id.twitterButton:
