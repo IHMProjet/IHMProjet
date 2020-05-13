@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+    <!--<group android:checkableBehavior="single">
+        <item android:id="@+id/nav_profil"
+            android:icon="@drawable/center"
+            android:title="Profil"/>
+        <item android:id="@+id/nav_setting"
+            android:icon="@drawable/center"
+            android:title="Setting"/>
+    </group>-->
+    <item 
+        android:title="@string/a2"
+        android:icon="@drawable/center">
+        <menu>
+        <item android:id="@+id/nav_transport_mode"
+            android:icon="@drawable/ic_directions_car_black_24dp"
+            android:title="Mode de transport"/>
+        <item android:id="@+id/language"
+            android:icon="@drawable/center"
+            android:title="@string/a1"/>
+    <item
+        app:actionLayout="@layout/switch_item"
+        android:id="@+id/SwitchGPS"
+        android:title="@string/gaps1"/>
+    <item
+        android:id="@+id/renzheng"
+        android:title="@string/renzheng"/>
+    <item
+        android:id="@+id/tuisong"
+        android:title="@string/tuisong"/>
+    <item
+        android:id="@+id/tuichu"
+        android:title="@string/tuichu"/>
+        </menu>
+    </item>
+
+</menu>

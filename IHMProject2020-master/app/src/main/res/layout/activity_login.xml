@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:background="@mipmap/logbg"
+    android:orientation="vertical"
+   >
+
+    <ImageView
+        android:layout_marginBottom="50dp"
+        android:src="@mipmap/jiudian"
+        android:layout_width="100dp"
+        android:layout_height="100dp">
+
+    </ImageView>
+
+
+    <LinearLayout
+        android:background="@color/bai"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:paddingTop="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+
+            android:id="@+id/layout_0"
+            android:gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:textColor="@color/main2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/a3"
+                android:textStyle="bold" />
+
+            <EditText
+                android:textColor="@color/main2"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@color/bai"
+                android:id="@+id/et_phone"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/tv_phone"
+                android:inputType="number"
+                android:maxLength="11" />
+        </LinearLayout>
+        <View
+            android:background="@color/huise"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"></View>
+        <LinearLayout
+            android:paddingBottom="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:background="@color/bai"
+            android:id="@+id/layout_1"
+            android:gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:textColor="@color/main2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/a4"
+                android:textStyle="bold" />
+
+            <EditText
+                android:textColor="@color/main2"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@color/bai"
+                android:id="@+id/et_pwd"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/tv_phone"
+                android:inputType="number"
+                android:maxLength="11" />
+        </LinearLayout>
+    </LinearLayout>
+
+  <LinearLayout
+      android:layout_margin="40dp"
+      android:gravity="center"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+>
+      <TextView
+          android:id="@+id/tv_login"
+          android:layout_width="100dp"
+          android:layout_height="50dp"
+          android:background="@drawable/button2"
+          android:gravity="center"
+          android:text="@string/a5"
+          android:textColor="#fff"
+          android:textSize="20sp" />
+
+      <TextView
+          android:layout_marginLeft="40dp"
+          android:id="@+id/tv_regi"
+          android:layout_width="100dp"
+          android:layout_height="50dp"
+          android:background="@drawable/button2"          android:gravity="center"
+          android:text="@string/a6"
+          android:textColor="#fff"
+          android:textSize="20sp" />
+
+  </LinearLayout>
+
+
+</LinearLayout>

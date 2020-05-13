@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="text1">#000</color>
+    <color name="bai">#fff</color>
+    <color name="main1">#0F8DFB</color>
+    <color name="main2">#a1a1a1</color>
+    <color name="red">#fd0202</color>
+
+    <color name="button">#e5e5e5</color>
+    <color name="huise">#eeeff0</color>
+    <color name="huise2">#11eeeff0</color>
+</resources>

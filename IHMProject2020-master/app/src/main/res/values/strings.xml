@@ -1,0 +1,68 @@
+<resources>
+    <string name="app_name">IHMProject</string>
+    <string name="naviguation_drawer_open">Open naviguation drawer</string>
+    <string name="naviguation_drawer_close">Close naviguation drawer</string>
+    <string name="cancel">Cancel</string>
+
+
+    <string-array name="languagesB">
+        <item>Français</item>
+        <item>English</item>
+        <item>Chinois</item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <string name="renzheng">认证</string>
+    <string name="tuisong">推送</string>
+    <string name="namestring">名字</string>
+    <string name="age">年龄</string>
+    <string name="sex">性别</string>
+    <string name="tuichu">退出</string>
+
+    <string name="gaps1">Activer GPS</string>
+    <string name="a1">ALangue</string>
+    <string name="a2">Paramètres</string>
+
+    <string name="a3">账号</string>
+    <string name="a4">密码</string>
+    <string name="a5">登陆</string>
+    <string name="a6">注册</string>
+    <string name="a7">提交</string>
+    <string name="a8">    Lieu:</string>
+    <string name="a9">2600 Adresse inventée</string>
+    <string name="a10">    Ajouter des photos</string>
+    <string name="a11">    total:</string>
+    <string name="a12">Moyen de transport concerné:</string>
+
+    <string name="a13">    Piéton</string>
+    <string name="a14">    Vélo</string>
+
+    <string name="a15">    Moto</string>
+
+    <string name="a16">    Voiture</string>
+
+    <string name="a17">    Bus</string>
+
+    <string name="a18">    Camion</string>
+
+    <string name="a19">    Informations Supplémentaires</string>
+    <string name="a20"> Publier</string>
+
+    <string name="a22">Accident</string>
+    <string name="a23">Incident</string>
+
+    <string name="ying">英文</string>
+    <string name="zhong">中文</string>
+    <string name="fayu">法语</string>
+
+
+
+
+
+
+
+
+</resources>

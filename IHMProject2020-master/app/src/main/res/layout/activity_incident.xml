@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="100">
+
+    <LinearLayout
+        android:id="@+id/incidentLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:layout_weight="90"
+        android:weightSum="100"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:context="Viewui.Activity.IncidentActivity">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="4"
+            android:fontFamily="@font/abril_fatface"
+            android:text="@string/a8"
+
+            android:textAlignment="viewStart"
+            android:textSize="24sp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="7"
+            android:enabled="false"
+            android:fontFamily="@font/abril_fatface"
+            android:text="@string/a9"
+
+            android:textAlignment="center"
+            android:textSize="24sp" />
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="5"
+            android:orientation="horizontal"
+            android:weightSum="100">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="50"
+                android:fontFamily="@font/abril_fatface"
+                android:paddingTop="3dp"
+                android:text="@string/a10"
+
+                android:textAlignment="center"
+                android:textSize="17sp" />
+
+            <Button
+                android:id="@+id/add_incident_photo"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="12"
+                android:background="@drawable/ic_add_white_24dp"
+                android:drawableStart="@drawable/ic_add_circle_black_24dp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="27"
+                android:fontFamily="@font/abril_fatface"
+                android:paddingTop="3dp"
+                android:text="@string/a11"
+
+                android:textAlignment="center"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/picturesCountShower"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="11"
+                android:fontFamily="@font/abril_fatface"
+                android:paddingTop="3dp"
+                android:text="0"
+                android:textAlignment="center"
+                android:textSize="17sp" />
+            <!--<FrameLayout
+                android:id="@+id/fragment_storage_control_container"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="38">
+            </FrameLayout>-->
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/fragment_picture_container"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="33"></FrameLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="7"
+            android:fontFamily="@font/abril_fatface"
+            android:text="@string/a12"
+            android:textAlignment="viewStart"
+            android:textSize="24sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="9"
+            android:weightSum="100">
+
+            <HorizontalScrollView
+                android:id="@+id/horizontalScrollView"
+                android:layout_width="match_parent"
+                android:layout_height="60dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/pietonButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/a13"
+
+                        />
+
+                    <Button
+                        android:id="@+id/veloButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/a14"
+
+                       />
+
+                    <Button
+                        android:id="@+id/motoButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/a15"
+
+                       />
+
+                    <Button
+                        android:id="@+id/voitureButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/a16"
+
+                       />
+
+                    <Button
+                        android:id="@+id/busButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/a17"
+
+                    />
+
+                    <Button
+                        android:id="@+id/camionButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/a18"
+
+                       />
+                </LinearLayout>
+
+            </HorizontalScrollView>
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="9"
+            android:fontFamily="@font/abril_fatface"
+            android:text="@string/a19"
+
+            android:textAlignment="viewStart"
+            android:textSize="24sp" />
+
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="15"
+            android:background="@color/design_default_color_background"
+            android:ems="10"
+            android:gravity="start|top"
+            android:inputType="textMultiLine" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/publishIncidentButton"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10"
+        android:text="@string/a20"
+
+        app:layout_constraintBottom_toBottomOf="@+id/incidentLayout" />
+</LinearLayout>
