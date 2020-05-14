@@ -11,8 +11,8 @@
         android:id="@+id/iv_personal_icon"
         android:layout_width="match_parent"
         android:layout_height="88dp"
-        android:src="@mipmap/ic_launcher_round"
-        />
+        android:src="@mipmap/ic_launcher_round" />
+
     <TextView
         android:id="@+id/username"
         android:layout_width="match_parent"
@@ -21,11 +21,4 @@
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
-    <Button
-        android:id="@+id/btn_change"
-        android:layout_width="100dp"
-        android:layout_height="38dp"
-        android:layout_gravity="center"
-        android:background="#00cc99"
-        android:text="@string/a38"></Button>
 </LinearLayout>
