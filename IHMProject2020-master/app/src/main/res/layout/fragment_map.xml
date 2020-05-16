@@ -12,6 +12,15 @@
         tools:layout_editor_absoluteY="99dp">
 
     </org.osmdroid.views.MapView>
+    <Button
+        android:id="@+id/reminder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="bottom"
+        android:text="@string/a39"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="5dp"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/accidentTextView"
