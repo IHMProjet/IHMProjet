@@ -18,8 +18,8 @@
     <string name="renzheng">Certificate</string>
     <string name="tuisong">Notification</string>
     <string name="namestring">Name</string>
-    <string name="workplace">Work place</string>
-    <string name="worknumber">Job number</string>
+    <string name="age">Age</string>
+    <string name="sex">Sex</string>
     <string name="tuichu">Quit</string>
 
     <string name="gaps1">Activate GPS</string>
@@ -75,6 +75,7 @@
     <string name="a36">official</string>
     <string name="a37">admimistrator</string>
     <string name="a38">change the photo</string>
+    <string name="a39">inform others</string>
 
 
 
