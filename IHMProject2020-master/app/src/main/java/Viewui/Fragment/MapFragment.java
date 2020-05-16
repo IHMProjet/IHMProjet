@@ -16,6 +16,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -52,6 +53,7 @@ public class MapFragment extends Fragment implements View.OnClickListener, Locat
 
     private FloatingActionButton eventAdder, incidentButton, twitterButton, accidentButton, centerMapButton;
     private TextView incidentButtonText, accidentButtonText;
+    private Button reminder;
 
     private Animation fabOpenAnim, fabCloseAnim, floatButtonOpen, floatButtonClose, centerButtonOpen, centerButtonClose;
 
@@ -85,6 +87,7 @@ public class MapFragment extends Fragment implements View.OnClickListener, Locat
         accidentButton = (FloatingActionButton) view.findViewById(R.id.accidentButton);
         twitterButton = (FloatingActionButton) view.findViewById(R.id.twitterButton);
         centerMapButton = (FloatingActionButton) view.findViewById(R.id.centerPosition);
+        reminder=(Button)view.findViewById(R.id.reminder);
 
         incidentButtonText = (TextView) view.findViewById(R.id.incidentTextView);
         accidentButtonText = (TextView) view.findViewById(R.id.accidentTextView);
@@ -94,6 +97,7 @@ public class MapFragment extends Fragment implements View.OnClickListener, Locat
         accidentButton.setOnClickListener(this);
         twitterButton.setOnClickListener(this);
         centerMapButton.setOnClickListener(this);
+        reminder.setOnClickListener(this);
 
         pref = getContext().getSharedPreferences("MyPref", 0);
         editor = pref.edit();
@@ -240,7 +244,9 @@ public class MapFragment extends Fragment implements View.OnClickListener, Locat
     }
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()){ case R.id.reminder:
+            createNotification("channel1");
+            sendNotificationOnChannel("Attention","Nous vous informons que il y a eu un nouveau incident.","channel1", NotificationCompat.PRIORITY_DEFAULT);
             case R.id.addAnEvent:
                 if(isAddEventsOpen){
                     closeEventAdder();
@@ -289,7 +295,18 @@ public class MapFragment extends Fragment implements View.OnClickListener, Locat
                 .setPriority(priority);
         ChannelNotification.getNotificationManager().notify(++notificationId ,notification.build());
     }
+    void createNotification(String CHANNEL_ID){
 
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(requireActivity().getApplicationContext(), CHANNEL_ID)
+                .setSmallIcon(R.drawable.notification_icon)
+                .setContentTitle("Attention!")
+                .setContentText("Il y a un nouveau incident!")
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+                .setAutoCancel(true);
+
+
+
+    }
     private void askGpsPermission(){
 
         ActivityCompat.requestPermissions(requireActivity(),
