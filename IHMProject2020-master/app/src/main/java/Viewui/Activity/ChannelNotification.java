@@ -27,6 +27,7 @@ import Viewui.BaseActivity;
 
 public class ChannelNotification extends Application {
     public static final String CHANNEL_ID = "channel1";
+    public static final String CHANNELID ="channel2";
     private static NotificationManager notificationManager;
     private Notification notification;
     private Button button;
@@ -46,12 +47,24 @@ public class ChannelNotification extends Application {
         //数据库配置
         Xutils.initDbConfiginit();
         createNotificationChannel("channel", "Channel pour créer des notifications", NotificationManager.IMPORTANCE_DEFAULT);
+        createNotificationChannel2("channel2","important information",NotificationManager.IMPORTANCE_HIGH);
     }
 
     private void createNotificationChannel(String nameOfChannel, String description, int importanceDefault) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
 
             NotificationChannel channel = new NotificationChannel(CHANNEL_ID, description, importanceDefault);
+            channel.setDescription(description);
+            notificationManager = getSystemService(NotificationManager.class);
+            Objects.requireNonNull(notificationManager).createNotificationChannel(channel);
+
+
+        }
+    }
+    private void createNotificationChannel2(String nameOfChannel, String description, int importanceDefault) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+
+            NotificationChannel channel = new NotificationChannel(CHANNELID, description, importanceDefault);
             channel.setDescription(description);
             notificationManager = getSystemService(NotificationManager.class);
             Objects.requireNonNull(notificationManager).createNotificationChannel(channel);

@@ -1,17 +1,12 @@
 package Viewui.Activity;
 import java.io.File;
 
-import Controller.IncidentController;
-import Model.Incident;
-import Viewui.Fragment.AddPhotoDialogFragment;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
@@ -19,7 +14,6 @@ import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 
 import android.Manifest;
@@ -45,8 +39,6 @@ import org.xutils.ex.DbException;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
-import androidx.core.content.FileProvider;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
@@ -54,7 +46,6 @@ import com.example.ihmproject.R;
 import com.flag.myapplication.car.bean.User;
 import com.flag.myapplication.car.utils.Xutils;
 import com.google.android.material.navigation.NavigationView;
-import com.google.android.material.snackbar.Snackbar;
 
 import java.util.Locale;
 import java.util.Objects;
@@ -63,9 +54,6 @@ import Viewui.Fragment.MapFragment;
 import Viewui.Fragment.ModeDeDeplacementFragment;
 import Interface.IButtonDrawerClickListener;
 import Interface.IButtonMapListener;
-import Viewui.Fragment.PictureFragment;
-import Viewui.Fragment.PostImageListFragment;
-import Viewui.Fragment.StorageFragment;
 import Viewui.LoginActivity;
 import Viewui.RenzhengActivity;
 
@@ -73,24 +61,51 @@ import Viewui.RenzhengActivity;
 public class MainActivity extends BaseActivity implements NavigationView.OnNavigationItemSelectedListener, IButtonDrawerClickListener, View.OnClickListener, IButtonMapListener {
     private Intent intent;
     private DrawerLayout drawerLayout;
-    private AddPhotoDialogFragment addPhotoDialogFragment;
-    AlertDialog alertDialog;
-    private Bitmap picture;
-    private PostImageListFragment postImageListFragment;
-    private PictureFragment pictureFragment;
-    private StorageFragment storageFragment;
-    private TextView pictureTotalShower;
-    private EditText description;
-    private SharedPreferences pref=null;
-    private SharedPreferences prefBouton=null;
-    private SharedPreferences.Editor editor=null;
-    private SharedPreferences.Editor editorBouton=null;
-    private double latitude = 43.615102;
-    private double longitude= 7.080124;
-    private IncidentController incidentController;
 
     private MapFragment mapFragment;
     private boolean permissionGranted;
+    protected static final int CHOOSE_PICTURE = 0;
+    protected static final int TAKE_PICTURE = 1;
+    private static final int CROP_SMALL_PICTURE = 2;
+    protected static Uri tempUri;
+    private ImageView iv_personal_icon;
+
+
+
+    /**
+     * 显示修改头像的对话框
+     */
+    protected void showChoosePicDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("设置头像");
+        String[] items = { "选择本地照片", "拍照" };
+        builder.setNegativeButton("取消", null);
+        builder.setItems(items, new DialogInterface.OnClickListener() {
+
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                switch (which) {
+                    case CHOOSE_PICTURE: // 选择本地照片
+                        Intent openAlbumIntent = new Intent(
+                                Intent.ACTION_GET_CONTENT);
+                        openAlbumIntent.setType("image/*");
+                        startActivityForResult(openAlbumIntent, CHOOSE_PICTURE);
+                        break;
+                    case TAKE_PICTURE: // 拍照
+                        Intent openCameraIntent = new Intent(
+                                MediaStore.ACTION_IMAGE_CAPTURE);
+                        tempUri = Uri.fromFile(new File(Environment
+                                .getExternalStorageDirectory(), "image.jpg"));
+                        // 指定照片保存路径（SD卡），image.jpg为一个临时文件，每次拍照后这个图片都会被替换
+                        openCameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, tempUri);
+                        startActivityForResult(openCameraIntent, TAKE_PICTURE);
+                        break;
+                }
+            }
+        });
+        builder.create().show();
+    }
+    
 
 
     @Override
@@ -207,7 +222,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
 
 
         if(menuItem.getItemId() == R.id.tuisong) {
-            startActivity(new Intent(MainActivity.this, IncidentActivity.class));
+            Toast.makeText(this, "推送成功", Toast.LENGTH_SHORT).show();
         }
         if(menuItem.getItemId() == R.id.tuichu) {
             startActivity(new Intent(MainActivity.this, LoginActivity.class));
@@ -218,7 +233,6 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
             }
             finish();
         }
-
 
 
 
@@ -243,24 +257,11 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         startMapFragment();
     }
 
-
-    private void photoImportChoiceDialog(){
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setView(addPhotoDialogFragment.getThisView(getLayoutInflater()))
-                .setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        dialog.dismiss();
-                    }
-                });
-
-        alertDialog = builder.create();
-        alertDialog.show();
-        alertDialog.getWindow().setLayout(1000, 700);
-    }
     @Override
     public void onClick(View v) {
 
     }
+
     @Override
     public void mapIntentButtonClicked(View v) {
         switch(v.getId()){

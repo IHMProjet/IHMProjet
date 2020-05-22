@@ -1,6 +1,8 @@
 package Viewui.Fragment;
 
 import android.Manifest;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -10,6 +12,7 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -31,6 +34,7 @@ import Interface.IButtonMapListener;
 
 import com.example.ihmproject.R;
 
+import com.flag.myapplication.car.utils.Xutils;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.gson.Gson;
@@ -43,10 +47,14 @@ import org.osmdroid.views.overlay.ItemizedIconOverlay;
 import org.osmdroid.views.overlay.ItemizedOverlayWithFocus;
 import org.osmdroid.views.overlay.Marker;
 import org.osmdroid.views.overlay.OverlayItem;
+import org.xutils.BuildConfig;
+import org.xutils.x;
 
 import java.util.ArrayList;
 import java.util.Map;
+import java.util.Objects;
 
+import static Viewui.Activity.ChannelNotification.CHANNEL_ID;
 import static android.content.Context.LOCATION_SERVICE;
 
 public class MapFragment extends Fragment implements View.OnClickListener, LocationListener {
@@ -76,6 +84,9 @@ public class MapFragment extends Fragment implements View.OnClickListener, Locat
 
     }
 
+
+
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -87,7 +98,7 @@ public class MapFragment extends Fragment implements View.OnClickListener, Locat
         accidentButton = (FloatingActionButton) view.findViewById(R.id.accidentButton);
         twitterButton = (FloatingActionButton) view.findViewById(R.id.twitterButton);
         centerMapButton = (FloatingActionButton) view.findViewById(R.id.centerPosition);
-        reminder=(Button)view.findViewById(R.id.reminder);
+        reminder = (Button)view.findViewById(R.id.reminder);
 
         incidentButtonText = (TextView) view.findViewById(R.id.incidentTextView);
         accidentButtonText = (TextView) view.findViewById(R.id.accidentTextView);
@@ -244,9 +255,9 @@ public class MapFragment extends Fragment implements View.OnClickListener, Locat
     }
     @Override
     public void onClick(View v) {
-        switch (v.getId()){ case R.id.reminder:
-            createNotification("channel1");
-            sendNotificationOnChannel("Attention","Nous vous informons que il y a eu un nouveau incident.","channel1", NotificationCompat.PRIORITY_DEFAULT);
+        switch (v.getId()){
+            case R.id.reminder:
+                sendNotificationOnChannel("Attention","Nous vous informons qu'il y a eu un nouveau incident","channel2", NotificationCompat.PRIORITY_DEFAULT);
             case R.id.addAnEvent:
                 if(isAddEventsOpen){
                     closeEventAdder();
@@ -295,18 +306,7 @@ public class MapFragment extends Fragment implements View.OnClickListener, Locat
                 .setPriority(priority);
         ChannelNotification.getNotificationManager().notify(++notificationId ,notification.build());
     }
-    void createNotification(String CHANNEL_ID){
 
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(requireActivity().getApplicationContext(), CHANNEL_ID)
-                .setSmallIcon(R.drawable.notification_icon)
-                .setContentTitle("Attention!")
-                .setContentText("Il y a un nouveau incident!")
-                .setPriority(NotificationCompat.PRIORITY_DEFAULT)
-                .setAutoCancel(true);
-
-
-
-    }
     private void askGpsPermission(){
 
         ActivityCompat.requestPermissions(requireActivity(),
@@ -347,6 +347,7 @@ public class MapFragment extends Fragment implements View.OnClickListener, Locat
         map.getOverlays().add(0,startMarker);
         map.invalidate();
     }
+
     @Override
     public void onStatusChanged(String provider, int status, Bundle extras) {
 
